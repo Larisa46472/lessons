@@ -35,7 +35,7 @@
 }
 adress-input::placeholder
 {
- font-family: SF Pro Display;
+ font-family: "SF Pro Display";
 font-style: normal;
 font-weight: normal;
 font-size: 16px;
@@ -53,7 +53,7 @@ color: #BFBFBF;
     border-radius: 2px;
     border: none;
     cursor: pointer;
-    font-family: SF Pro Display;
+    font-family: "SF Pro Display";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
