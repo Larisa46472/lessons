@@ -9,6 +9,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+    font-family: 'Roboto', sans-serif;
+}
 .block {
     align-items: center;
     display: flex;
@@ -23,6 +26,14 @@
 .container {
     padding-top: 40px;
 }
+
+.header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+
 .adress-input {
     max-width: 690px;
     width: 100%;
@@ -70,4 +81,36 @@ color: #BFBFBF;
     border: 1px solid #D9D9D9;
     margin-left: 8px;
 
+}
+
+/*promo*/
+.promo-block{
+    background: #FFF1B8;
+    border-radius: 10px;
+    padding: 68px 71px;
+    background: #FFF1B8 no-repeat url("../img/promo.png" ) right;
+    filter: drop-shadow(0px 7px 12px rgba(158, 158, 163, 0.1));
+
+}
+.text-block{
+    max-width: 520px;
+    width: 100%;
+}
+.promo-title {
+ max-width: 438px;  
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 39px;
+line-height: 46px;
+color:#302C34;
+margin-bottom: 16px;
+}
+.promo-desc{
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+color: #302C34;
 }
