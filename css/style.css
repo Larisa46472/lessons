@@ -10,7 +10,7 @@
     padding: 0;
 }
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: '"Roboto"', sans-serif;
 }
 .body {
     background: #F5F5F5;
@@ -34,6 +34,10 @@ html {
 }
 .container {
     padding-top: 40px;
+}
+.button img{
+    margin-right: 4px;
+    margin-left: 4px;
 }
     .input{
         border: 1px solid #D9D9D9;
@@ -117,7 +121,7 @@ html {
 }
 .promo-title {
  max-width: 438px;  
-font-family: Roboto;
+font-family: "Roboto";
 font-style: normal;
 font-weight: bold;
 font-size: 39px;
@@ -126,7 +130,7 @@ color:#302C34;
 margin-bottom: 16px;
 }
 .promo-desc{
-font-family: Roboto;
+font-family: "Roboto";
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
@@ -147,6 +151,13 @@ color: #302C34;
     align-items: center;
     margin-bottom: 44px;
 }
+.section__header-title {
+
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px; 
+    color: #000000;
+}
 .search-input{
     max-width: 306px;
     height: 34px;
@@ -161,6 +172,8 @@ color: #302C34;
     margin-bottom: 30px;
     background-color: #fff;
     border-radius: 7px;
+    text-decoration: none;
+    color:black;
 } 
 .card-main {
     padding: 21px 24px 35px;
@@ -173,9 +186,8 @@ color: #302C34;
     margin-bottom: 10px;
 }
 .cart-title {
-    font-family: Roboto;
+    font-family: "Roboto";
 font-style: normal;
-font-weight: bold;
 font-size: 24px;
 line-height: 32px;
 }
@@ -192,7 +204,7 @@ padding: 5px 8px;
 }
 .reiting {
 position: relative;    
-font-family: Roboto;
+font-family: "Roboto";
 font-style: normal;
 font-weight: bold;
 font-size: 18px;
@@ -211,7 +223,7 @@ margin-right: 26px;
     left: -22px;
 }
 .midprice {
-    font-family: Roboto;
+    font-family: "Roboto";
 font-style: normal;
 font-weight: normal;
 font-size: 18px;
@@ -220,14 +232,14 @@ margin-right: 25px;
 }
 .dish {
 position: relative;
-font-family: Roboto;
+font-family: "Roboto";
 font-style: normal;
 font-weight: normal;
 font-size: 18px;
 line-height: 32px;
 color: #8C8C8C;
 }
-.dish ::before {
+.dish::before {
     content: "";
     width: 5px;
     height: 5px;
@@ -276,4 +288,38 @@ color: #8C8C8C;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/*секция ресторана*/
+.restourant__header{
+   
+    max-width: 442px;
+    width: 100%;
+}
+.product-header{
+    display: flex;  
+    align-items: start; 
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.desc {
+    font-size: 18px;
+line-height: 21px;
+color: #8C8C8C;
+margin-top: 10px;
+}
+
+.product-deck{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    max-width: 210px;
+    width: 100%;
+}
+.product-price{
+    font-weight: bold;
+font-size: 20px;
+line-height: 32px;
+color: #000000;
 }
