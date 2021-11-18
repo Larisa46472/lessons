@@ -135,6 +135,12 @@ color: #302C34;
 }
 
 /*секция рестораны*/
+.section__rest {
+    padding-bottom: 91px;
+}
+
+
+
 .section__header {
     display: flex;
     justify-content: space-between;
@@ -224,12 +230,50 @@ color: #8C8C8C;
 .dish ::before {
     content: "";
     width: 5px;
-    height: 54px;
-    background: url("../img/Ellipse.svg");
+    height: 5px;
+    background: url("/../img/Ellipse.svg");
     position: absolute;
     top: 50%;
     left: -15px;
     margin-top:-3px;
     
 
+}
+/*секция footer*/
+
+.container-block{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding-left: 60px;
+}
+.footer {
+    background-color: #fff ;
+    padding: 60px 0;
+}
+.footer-block{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    min-width:556px ;
+    /*width: 100%;*/
+}
+.navigation {
+    min-width: 420px;
+    /*width: 100%;*/
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link {
+    font-size: 18px;
+    line-height: 21px;
+    color: #595959;
+    text-decoration: none;
+}
+.social-block {
+    max-width: 127px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
