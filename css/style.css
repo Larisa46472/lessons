@@ -257,7 +257,8 @@ color: #8C8C8C;
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
-    padding-left: 60px;
+    /*padding-left: 60px;*/
+    margin:auto;
 }
 .footer {
     background-color: #fff ;
