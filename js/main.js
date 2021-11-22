@@ -62,17 +62,17 @@ rows.forEach(row => {
 
     
    
-  btnMinus.addEventListener('click', ()=> {
-    if(count > 0) {
-    count--
-    countBlock.textContent=count
-    getNewPrice(count, price)
-}
+    btnMinus.addEventListener('click', ()=> {
+        if(count > 0) {
+        count--
+        countBlock.textContent=count
+        getNewPrice(count, price)
+    }
   })
-  btnPlus.addEventListener('click', ()=> {
-    count++
-    countBlock.textContent=count
-    getNewPrice(count, price)
+     btnPlus.addEventListener('click', ()=> {
+        count++
+        countBlock.textContent=count
+        getNewPrice(count, price)
 })
    
    
@@ -80,5 +80,5 @@ rows.forEach(row => {
 })  
 
 
-//логеры
+
 
