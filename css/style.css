@@ -445,3 +445,133 @@ color: #000000;
 .modal--close{
     display: none;
 }
+
+
+/*адаптация под экраны*/
+/*если ширина экрана стала <= 1240*/
+@media (max-width: 1240px) {
+    .container {
+        wigth:95%;
+    }
+    .logo-link {
+        display: none;
+    }
+    .cards {
+        justify-content: space-around;
+    }
+    .card {
+        max-width: 40%;
+    }
+    .card-img img {
+        width: 100%;
+    }
+}
+@media  (max-width:980px) {
+.header-buttons {
+    display: none;
+}
+.header .logo-link {
+    display: block;
+    order: 1;
+}
+.adress-input {
+    width: 75%;
+}
+.promo-block {
+    background: #FFF188;
+}
+.card {
+    max-width: 300px;
+}
+}
+
+
+
+@media  (max-width:680px) {
+    
+    .adress-input {
+        width: 100%; 
+        order: -1;
+        margin-bottom: 20px;
+}
+.block__htader {
+    flex-wrap: wrap;
+}
+.header-buttons {
+    display: flex;
+}
+.header .logo-link {
+    order: 0;
+}
+.header {
+    margin-top: 20px;
+}
+   
+   
+   
+    .section-promo {
+        display: none;
+    }
+    .section__header-title {
+        display: none;
+    }
+    
+    .section__header {
+        justify-content: center;
+    }
+
+    
+   
+    .search-input {
+        max-width: 75%;
+    }
+    .cards {
+        flex-direction: column;
+        
+    }
+    .card {
+        max-width: 75%;
+    }
+    .block__footer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-block {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .footer {
+        padding: 20px 0;
+    }
+}
+@media  (max-width:480px) {
+    .adress-input {
+        width: 100%; 
+        order: -1;
+        margin-bottom: 20px;
+}
+.block__htader {
+    flex-wrap: wrap;
+}
+.header-buttons {
+    display: flex;
+}
+.header .logo-link {
+    order: 0;
+}
+.header {
+    margin-top: 20px;
+}
+.card {
+    max-width: 90%;
+}
+.section__header {
+    margin-bottom: 20px;
+}
+.navigation {
+    display: none;
+}
+.section-rest {
+    padding-bottom: 0;
+}
+}
