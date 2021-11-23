@@ -512,10 +512,12 @@ color: #000000;
     .section-promo {
         display: none;
     }
-    .section__header-title {
+    /*.section__header-title {
         display: none;
     }
-    
+    */
+    .title-rest { display: none;
+    }
     .section__header {
         justify-content: center;
     }
@@ -550,7 +552,7 @@ color: #000000;
         order: -1;
         margin-bottom: 20px;
 }
-.block__htader {
+.block__header {
     flex-wrap: wrap;
 }
 .header-buttons {
@@ -558,6 +560,16 @@ color: #000000;
 }
 .header .logo-link {
     order: 0;
+}
+
+.dish {
+    display: none;
+}
+.midprice {
+    display: none;
+}
+.restourant__header{
+    justify-content: space-between;
 }
 .header {
     margin-top: 20px;
