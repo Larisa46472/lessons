@@ -1,4 +1,4 @@
- const btnCart = document.getElementById('cart');
+const btnCart = document.getElementById('cart');
 const modal = document.querySelector('.modal');
 const btnClose = document.querySelector('.btn-close');
 const rows = modal.querySelectorAll('.row');
@@ -13,7 +13,6 @@ const total = modal.querySelector('.modal-sum');
 
 //объявление функций
 
-
 const modalOpen = () => {
     modal.classList.remove('modal--close')
 }
@@ -23,7 +22,7 @@ const modalClose = () => {
 
 const getFullPrice =() => {
     let fullPrice =0;
-    //const rows = modal.querySelectorAll('.row'); 
+    
     rows.forEach(row => {
         let newPrice=0;
         let priceBlock = row.querySelector('.price')
@@ -31,11 +30,9 @@ const getFullPrice =() => {
         fullPrice+= price;
     })
 
-    
     total.textContent=fullPrice;
   
 }
-
 
 
 //вызов функций
@@ -73,7 +70,7 @@ rows.forEach(row => {
         count++
         countBlock.textContent=count
         getNewPrice(count, price)
-})
+    })
    
    
     
