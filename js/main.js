@@ -3,6 +3,14 @@ const modal = document.querySelector('.modal');
 const btnClose = document.querySelector('.btn-close');
 const rows = modal.querySelectorAll('.row');
 const total = modal.querySelector('.modal-sum');
+/*находим main ресторана и индекса*/
+const mainIndex = document.getElementById('index')
+const mainRest = document.getElementById('restourant')
+const cardsBlockIndex = mainIndex.querySelector('.cards')
+const cardsIndex = cardsBlockIndex.querySelectorAll('.card')
+const logos = document.querySelectorAll('.logo-link')
+const cardsBlockRest= mainRest.querySelector('.cards')
+const cardsRest = cardsBlockRest.querySelectorAll('.card')
 
 
 //console.log(btnCart);//
@@ -13,12 +21,30 @@ const total = modal.querySelector('.modal-sum');
 
 //объявление функций
 
+const getProductModal =(nameProduct, priceProduct, index=0) => {
+   
+
+   
+    let nameProductBlock =rows[index].querySelector('.product-name')
+    let priceProductBlock = rows[index].querySelector('.price')
+
+    nameProductBlock.textContent = nameProduct
+    priceProductBlock.textContent= priceProduct
+ 
+}
+
 const modalOpen = () => {
     modal.classList.remove('modal--close')
 }
 const modalClose = () => {
     modal.classList.add('modal--close')
 }
+
+const getToMain = () => {
+    mainRest.classList.toggle('not--active')
+    mainIndex.classList.toggle('not--active')
+ }
+ 
 
 const getFullPrice =() => {
     let fullPrice =0;
@@ -41,6 +67,12 @@ const getFullPrice =() => {
 btnCart.addEventListener('click', modalOpen);
 btnClose.addEventListener('click', modalClose);
 
+
+modal.addEventListener('click', (event) => {
+    if (event.target == modal) {
+        modalOpen();
+    }
+})
 rows.forEach(row => {
     let newPrice=0;
     let priceBlock = row.querySelector('.price')
@@ -75,24 +107,39 @@ rows.forEach(row => {
    
     
 })  
-getFullPrice()
+
+cardsRest.forEach((card, index) => {
+    let nameProductBlock =card.querySelector('.cart-title')
+    let priceProductBlock = card.querySelector('.product-price')
+    let nameProduct=nameProductBlock.textContent
+    let priceProduct = +priceProductBlock.textContent.slice(0, 3)
 
 
+    getProductModal(nameProduct, priceProduct, index)
 
-/*находим main ресторана и индекса*/
-const mainIndex = document.getElementById('index')
-const mainRest = document.getElementById('restourant')
-const cardsBlockIndex = mainIndex.querySelector('.cards')
-const cardsIndex = cardsBlockIndex.querySelectorAll('.card')
-
-const getToMain = () => {
-   mainRest.classList.toggle('not--activ')
-   mainIndex.classList.toggle('not--activ')
-}
-
-
+    //console.log(nameProduct)
+    //console.log(priceProduct)
+})
 cardsIndex.forEach(card=> {
     card.addEventListener('click', () => {
         getToMain();
     })
 })
+
+logos.forEach(logo => {
+    logo.addEventListener('click', (event) =>{
+        event.preventDefault();
+        if (mainIndex.classList.contains('not--active')) {
+            getToMain();
+        }
+        
+    })
+})
+getFullPrice()
+
+//логеры
+
+
+
+
+
