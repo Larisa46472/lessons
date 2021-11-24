@@ -36,7 +36,7 @@ const getFullPrice =() => {
 
 
 //вызов функций
-getFullPrice()
+
 
 btnCart.addEventListener('click', modalOpen);
 btnClose.addEventListener('click', modalClose);
@@ -75,7 +75,24 @@ rows.forEach(row => {
    
     
 })  
+getFullPrice()
 
 
 
+/*находим main ресторана и индекса*/
+const mainIndex = document.getElementById('index')
+const mainRest = document.getElementById('restourant')
+const cardsBlockIndex = mainIndex.querySelector('.cards')
+const cardsIndex = cardsBlockIndex.querySelectorAll('.card')
 
+const getToMain = () => {
+   mainRest.classList.toggle('not--activ')
+   mainIndex.classList.toggle('not--activ')
+}
+
+
+cardsIndex.forEach(card=> {
+    card.addEventListener('click', () => {
+        getToMain();
+    })
+})
