@@ -23,7 +23,9 @@ const cardsRest = cardsBlockRest.querySelectorAll('.card')
 
 const getProductModal =(nameProduct, priceProduct, index=0) => {
    
-
+    console.log(nameProduct);
+    console.log(priceProduct);
+    console.log(index);
    
    // let nameProductBlock =rows[index].querySelector('.product-name')
    // let priceProductBlock = rows[index].querySelector('.price')
@@ -87,9 +89,11 @@ cardsRest.forEach((card, index) => {
     let nameProduct=nameProductBlock.textContent
     let priceProduct = +priceProductBlock.textContent.slice(0, 3)
 
-    console.btnProduct = card.querySelector('button')
+    const btnProduct = card.querySelector('button')
 
-    console.log(btnProduct);
+    btnProduct.addEventListener('click', () => {
+        getProductModal(nameProduct, priceProduct, index)
+    })
 
     getProductModal(nameProduct, priceProduct, index)
 
