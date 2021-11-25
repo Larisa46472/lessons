@@ -34,9 +34,11 @@ const getProductModal =(nameProduct, priceProduct, index=0) => {
     newRow.classList.remove('not--active')
     nameProductBlock.textContent=nameProduct
     priceProductBlock.textContent=priceProduct
-
     rowsBlock.append(newRow)
-    //console.log(rowsBlock)
+    nameArr.push(nameProduct)
+    
+    //consоle.log(nameArr);
+    console.log(nameArr);
    
     rows = rowsBlock.querySelectorAll('.row')
     rows.forEach(row => {
@@ -68,8 +70,6 @@ const getProductModal =(nameProduct, priceProduct, index=0) => {
         
     })  
     
-    nameArr.pudh(nameProduct)
-    cons
     
 
   
