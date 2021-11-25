@@ -73,6 +73,19 @@ modal.addEventListener('click', (event) => {
         modalOpen();
     }
 })
+cardsRest.forEach((card, index) => {
+    let nameProductBlock =card.querySelector('.cart-title')
+    let priceProductBlock = card.querySelector('.product-price')
+    let nameProduct=nameProductBlock.textContent
+    let priceProduct = +priceProductBlock.textContent.slice(0, 3)
+
+    console.log(nameProduct)
+    console.log(priceProduct)
+
+    getProductModal(nameProduct, priceProduct, index)
+
+   
+})
 rows.forEach(row => {
     let newPrice=0;
     let priceBlock = row.querySelector('.price')
@@ -108,18 +121,7 @@ rows.forEach(row => {
     
 })  
 
-cardsRest.forEach((card, index) => {
-    let nameProductBlock =card.querySelector('.cart-title')
-    let priceProductBlock = card.querySelector('.product-price')
-    let nameProduct=nameProductBlock.textContent
-    let priceProduct = +priceProductBlock.textContent.slice(0, 3)
 
-
-    getProductModal(nameProduct, priceProduct, index)
-
-    //console.log(nameProduct)
-    //console.log(priceProduct)
-})
 cardsIndex.forEach(card=> {
     card.addEventListener('click', () => {
         getToMain();
