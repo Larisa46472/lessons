@@ -25,11 +25,11 @@ const getProductModal =(nameProduct, priceProduct, index=0) => {
    
 
    
-    let nameProductBlock =rows[index].querySelector('.product-name')
-    let priceProductBlock = rows[index].querySelector('.price')
-
-    nameProductBlock.textContent = nameProduct
-    priceProductBlock.textContent= priceProduct
+   // let nameProductBlock =rows[index].querySelector('.product-name')
+   // let priceProductBlock = rows[index].querySelector('.price')
+//
+  //  nameProductBlock.textContent = nameProduct
+   // priceProductBlock.textContent= priceProduct
  
 }
 
@@ -60,6 +60,14 @@ const getFullPrice =() => {
   
 }
 
+const getNewPrice = (count, price, priceBlock) =>{
+    let newPrice=0;
+    newPrice=count * price
+    priceBlock.textContent=newPrice
+    getFullPrice()
+
+}
+
 
 //вызов функций
 
@@ -79,8 +87,9 @@ cardsRest.forEach((card, index) => {
     let nameProduct=nameProductBlock.textContent
     let priceProduct = +priceProductBlock.textContent.slice(0, 3)
 
-    console.log(nameProduct)
-    console.log(priceProduct)
+    console.btnProduct = card.querySelector('button')
+
+    console.log(btnProduct);
 
     getProductModal(nameProduct, priceProduct, index)
 
@@ -95,26 +104,20 @@ rows.forEach(row => {
     const btnMinus = row.querySelector('.minus')
     const btnPlus = row.querySelector('.plus')
     
-    const getNewPrice = (count, price) =>{
-        newPrice=count * price
-        priceBlock.textContent=newPrice
-        getFullPrice()
-
-    }
-
+   
     
    
     btnMinus.addEventListener('click', ()=> {
         if(count > 0) {
         count--
         countBlock.textContent=count
-        getNewPrice(count, price)
+        getNewPrice(count, price, priceBlock)
     }
   })
      btnPlus.addEventListener('click', ()=> {
         count++
         countBlock.textContent=count
-        getNewPrice(count, price)
+        getNewPrice(count, price, priceBlock)
     })
    
    
@@ -140,6 +143,8 @@ logos.forEach(logo => {
 getFullPrice()
 
 //логеры
+
+
 
 
 
