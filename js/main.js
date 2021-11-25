@@ -1,7 +1,7 @@
 const btnCart = document.getElementById('cart');
 const modal = document.querySelector('.modal');
 const btnClose = document.querySelector('.btn-close');
-const rows = modal.querySelectorAll('.row');
+
 const total = modal.querySelector('.modal-sum');
 /*находим main ресторана и индекса*/
 const mainIndex = document.getElementById('index')
@@ -12,6 +12,8 @@ const logos = document.querySelectorAll('.logo-link')
 const cardsBlockRest= mainRest.querySelector('.cards')
 const cardsRest = cardsBlockRest.querySelectorAll('.card')
 
+let rows = modal.querySelectorAll('.row');
+let nameArr= []
 
 //console.log(btnCart);//
 
@@ -23,15 +25,54 @@ const cardsRest = cardsBlockRest.querySelectorAll('.card')
 
 const getProductModal =(nameProduct, priceProduct, index=0) => {
    
-    console.log(nameProduct);
-    console.log(priceProduct);
-    console.log(index);
+    const rowsBlock = modal.querySelector('.modal-main')
+    rows = rowsBlock.querySelectorAll('.row')
+    const newRow = rows[0].cloneNode(true)
+    const nameProductBlock = newRow.querySelector('.product-name');
+    const priceProductBlock = newRow.querySelector('.price');
+    
+    newRow.classList.remove('not--active')
+    nameProductBlock.textContent=nameProduct
+    priceProductBlock.textContent=priceProduct
+
+    rowsBlock.append(newRow)
+    //console.log(rowsBlock)
    
-   // let nameProductBlock =rows[index].querySelector('.product-name')
-   // let priceProductBlock = rows[index].querySelector('.price')
-//
-  //  nameProductBlock.textContent = nameProduct
-   // priceProductBlock.textContent= priceProduct
+    rows = rowsBlock.querySelectorAll('.row')
+    rows.forEach(row => {
+        let newPrice=0;
+        let priceBlock = row.querySelector('.price')
+        let price = +priceBlock.textContent
+        let countBlock = row.querySelector('.count')
+        let count = countBlock.textContent
+        const btnMinus = row.querySelector('.minus')
+        const btnPlus = row.querySelector('.plus')
+        
+       
+        
+       
+        btnMinus.addEventListener('click', ()=> {
+            if(count > 0) {
+            count--
+            countBlock.textContent=count
+            getNewPrice(count, price, priceBlock)
+        }
+      })
+         btnPlus.addEventListener('click', ()=> {
+            count++
+            countBlock.textContent=count
+            getNewPrice(count, price, priceBlock)
+        })
+       
+       
+        
+    })  
+    
+    nameArr.pudh(nameProduct)
+    cons
+    
+
+  
  
 }
 
@@ -99,34 +140,6 @@ cardsRest.forEach((card, index) => {
 
    
 })
-rows.forEach(row => {
-    let newPrice=0;
-    let priceBlock = row.querySelector('.price')
-    let price = +priceBlock.textContent
-    let countBlock = row.querySelector('.count')
-    let count = countBlock.textContent
-    const btnMinus = row.querySelector('.minus')
-    const btnPlus = row.querySelector('.plus')
-    
-   
-    
-   
-    btnMinus.addEventListener('click', ()=> {
-        if(count > 0) {
-        count--
-        countBlock.textContent=count
-        getNewPrice(count, price, priceBlock)
-    }
-  })
-     btnPlus.addEventListener('click', ()=> {
-        count++
-        countBlock.textContent=count
-        getNewPrice(count, price, priceBlock)
-    })
-   
-   
-    
-})  
 
 
 cardsIndex.forEach(card=> {
