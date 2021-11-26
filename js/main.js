@@ -41,15 +41,21 @@ const getProductModal =(nameProduct, priceProduct, oldPrice, index=0) => {
    
     rows = rowsBlock.querySelectorAll('.row')
     rows.forEach(row => {
+        const btnMinus = row.querySelector('.minus');
+        const btnPlus = row.querySelector('.plus');
         let nameProductBlock= row.querySelector('.product-name');
         let priceProductBlock =newRow.querySelector('.price');
-        
         let priceBlock = row.querySelector('.price');
         let price = +priceBlock.textContent;
         let countBlock = row.querySelector('.count');
-        let count = countBlock.textContent;
-        const btnMinus = row.querySelector('.minus');
-        const btnPlus = row.querySelector('.plus');
+        let count = +countBlock.textContent; //добавила +
+       
+//Добавила после исправлений Сергея
+        if (count != 0) {
+            price = priceAll / count
+        } else price = priceAll
+        //конец исправления
+
 
         if(nameProductBlock.textContent == nameProduct) {
             count++
