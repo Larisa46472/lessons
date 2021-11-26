@@ -46,10 +46,10 @@ const getProductModal =(nameProduct, priceProduct, oldPrice, index=0) => {
         let nameProductBlock= row.querySelector('.product-name');
         let priceProductBlock =newRow.querySelector('.price');
         let priceBlock = row.querySelector('.price');
-        let price = +priceBlock.textContent;
+        let priceAll = +priceBlock.textContent;
         let countBlock = row.querySelector('.count');
         let count = +countBlock.textContent; //добавила +
-       
+        let price;
 //Добавила после исправлений Сергея
         if (count != 0) {
             price = priceAll / count
