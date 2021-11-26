@@ -71,8 +71,8 @@ const getProductModal =(nameProduct, priceProduct, oldPrice, index=0) => {
             countBlock.textContent=count
             getNewPrice(count, price, priceBlock)
         
-        }   else if (count == 0) {
-                getNewPrice(count, oldPrice, priceBlock)
+       // }   else if (count == 0) {
+         //       getNewPrice(count, oldPrice, priceBlock)
         }
 
       })
