@@ -8,7 +8,23 @@ let rows = rowsBlock.querySelectorAll('.row');
 //для сточек в модальном окне
 let nameArr = [] 
 
-// для поДсчета ИТОГО
+// для подсчета ИТОГО
+const fullPrice = (rows) => {
+    let fullPrice = 0
+    rows.forEach((row, index) => {
+        if (index != 0) { 
+       const price = +row.querySelector('.price').textContent
+       let  count = +row.querySelector('.count').textContent 
+       pricePosition =count * price
+
+         fullPrice += pricePosition   
+      
+        }
+    })
+    total.textContent = fullPrice
+}
+
+// обновление колличества продукта в строке модального окна
 const getNowRow = () => {
   rows = rowsBlock.querySelectorAll('.row');
   rows.forEach((row, index) => {
@@ -22,52 +38,56 @@ const getNowRow = () => {
         let  count = +row.querySelector('.count').textContent   
 
       btnMinus.addEventListener('click', () => {
-          console.log(name, price, count, '-')
+        if (count > 0) { 
+            count--
+            row.querySelector('.count').textContent = count
+            fullPrice(rows)
+        } 
+        
        })
 
-       btnPlus.addEventListener('click', () => {
-        console.log(name, price, count, '+')
+        btnPlus.addEventListener('click', () => {
+        count++
+        row.querySelector('.count').textContent = count
+        fullPrice(rows)
      })
      } 
     })
+    fullPrice(rows)
 }
 
 
 //Работаем с карточкой товара в ресторане
-const getProductModal = (productName, productPrice) => {
-        const newRow= rows[0].cloneNode(true)
-        const productNameBlock = newRow.querySelector('.product-name')
-        const productPriceBlock = newRow.querySelector('.price')
-        //const countNewRow = +newRow.querySelector('.count').textContent
-      
-        productNameBlock.textContent = productName
-        productPriceBlock.textContent =productPrice
+    const getProductModal = (productName, productPrice) =>{
+    const newRow = rows[0].cloneNode(true);
+    const productNameBlock = newRow.querySelector('.product-name');
+    const productPriceBlock = newRow.querySelector('.price');
+    //const countNewRow = +newRow.querySelector('.count').textContent
+    productNameBlock.textContent = productName;
+    productPriceBlock.textContent = productPrice;
 
-        newRow.classList.remove('not--active')
-            
-        //проверяем на наличие названия в массиве
-         if (!nameArr.includes(productName)) {
-                rowsBlock.append(newRow)
-                nameArr.push(productName)
-        } else {
-            newRow.remove()
-            //увеличиваем счетчик на 1
-            
-            rows = rowsBlock.querySelectorAll('.row')
-            rows.forEach(row => {
-                 const name = row.querySelector('.product-name').textContent
-                 let  counter= +row.querySelector('.count').textContent
-                     if (name === productName) {
-                        counter++
-                        row.querySelector('.count').textContent = counter
-                     }
-                       
-                })
+    newRow.classList.remove('not--active');
+
+    //проверяем на наличие названия в массиве
+    if (!nameArr.includes(productName)) {
+        rowsBlock.append(newRow);
+        nameArr.push(productName);
+    } else {
+        newRow.remove();
+        //увеличиваем счетчик на 1
+        rows = rowsBlock.querySelectorAll('.row');
+        rows.forEach(row => {
+            const name = row.querySelector('.product-name').textContent;
+            let counter = +row.querySelector('.count').textContent;
+            if (name === productName) {
+                counter++;
+                row.querySelector('.count').textContent = counter;
             }
-        
-            //считаем ИТОГО
 
-      
+        });
+    }
+
+    //считаем ИТОГО
 }
 //Работаем с модальным окном
 const infoFromCard = () => {
