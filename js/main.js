@@ -9,22 +9,30 @@ const mainRest = document.getElementById('restourant')
 const cardsBlockIndex = mainIndex.querySelector('.cards')
 const cardsIndex = cardsBlockIndex.querySelectorAll('.card')
 const logos = document.querySelectorAll('.logo-link')
-//const cardsBlockRest= mainRest.querySelector('.cards')
-//const cardsRest = cardsBlockRest.querySelectorAll('.card')
 
-//let rows = modal.querySelectorAll('.row');
-//let nameArr= []
 
+let intervalId;
+
+
+const animateModal = () => {
+    let count = 99;
+    modal.classList.remove('modal--close')
+    modal.style.transform = `translateX(-100%)`
+    const animate = () => {
+        count--
+        modal.style.transform = `translateX(-${count}%)`
+        if (count == 0) {
+            clearInterval(intervalId)
+        }
+    }
+    intervalId=setInterval(animate, 10)
+   
+}
 
 //объявление функций
-
-
-
-const modalOpen = () => {
-    modal.classList.remove('modal--close')
-}
 const modalClose = () => {
     modal.classList.add('modal--close')
+   
 }
 
 const getToMain = () => {
@@ -33,20 +41,16 @@ const getToMain = () => {
  }
  
 
-
-
-
-
 //вызов функций
 
 
-btnCart.addEventListener('click', modalOpen);
+btnCart.addEventListener('click', animateModal);
 btnClose.addEventListener('click', modalClose);
 
 
 modal.addEventListener('click', (event) => {
     if (event.target == modal) {
-        modalOpen();
+        modalClose();
     }
 })
 
